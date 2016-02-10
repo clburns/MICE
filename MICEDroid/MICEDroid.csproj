@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{335191AB-CA87-4760-BCA7-E9A62AF929F5}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MICEDroid</RootNamespace>
+    <AssemblyName>MICEDroid</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FM">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.Audio">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.IceLink">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.IceLink.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.IceLink.WebRTC">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.IceLink.WebRTC.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.IceLink.WebSync">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.IceLink.WebSync.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.Video">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.WebSync">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.WebSync.dll</HintPath>
+    </Reference>
+    <Reference Include="FM.WebSync.Subscribers">
+      <HintPath>..\..\..\..\..\Downloads\IceLink-2.8.10-Community\Libraries\XamarinAndroid\FM.WebSync.Subscribers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\CallActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Codecs\AudioProcessing\AcousticEchoCanceller.cs" />
+    <Compile Include="Codecs\AudioProcessing\AudioProcessingLibrary.cs" />
+    <Compile Include="Codecs\Opus\Decoder.cs" />
+    <Compile Include="Codecs\Opus\Encoder.cs" />
+    <Compile Include="Codecs\Opus\OpusCodec.cs" />
+    <Compile Include="Codecs\Opus\OpusEchoCanceller.cs" />
+    <Compile Include="Codecs\Opus\OpusLibrary.cs" />
+    <Compile Include="Codecs\VP8\Decoder.cs" />
+    <Compile Include="Codecs\VP8\Encoder.cs" />
+    <Compile Include="Codecs\VP8\LibVpxCom.cs" />
+    <Compile Include="Codecs\VP8\LibVpxDec.cs" />
+    <Compile Include="Codecs\VP8\LibVpxEnc.cs" />
+    <Compile Include="Codecs\VP8\LibVpxEncConfig.cs" />
+    <Compile Include="Codecs\VP8\LibVpxException.cs" />
+    <Compile Include="Codecs\VP8\Rational.cs" />
+    <Compile Include="Codecs\VP8\Vp8Codec.cs" />
+    <Compile Include="IceLink\LocalMedia.cs" />
+    <Compile Include="IceLink\Signalling.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libaudioprocessing.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libaudioprocessingJNI.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libopus.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libopusJNI.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libvpx.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidNativeLibrary>
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libvpxJNI.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AndroidNativeLibrary>
+    <None Include="lib\x86\libopus.so" />
+    <None Include="lib\x86\libopusJNI.so" />
+    <None Include="lib\x86\libvpx.so" />
+    <None Include="lib\x86\libvpxJNI.so" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CallLayout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MICEPcl\MICEPcl.csproj">
+      <Project>{6ec36ccf-b74c-448e-bdb1-db6cc590934e}</Project>
+      <Name>MICEPcl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Colors.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+		<Target Name="BeforeBuild">
+		</Target>
+		<Target Name="AfterBuild">
+		</Target>
+ -->
+</Project>
